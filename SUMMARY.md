@@ -4,7 +4,7 @@
 
 ## Team Blind 75
 
-* [Day1](team-blind-75/day1.md)
+* [Day1](team-blind-75/untitled.md)
 
 ## CTCI <a id="ctcl"></a>
 
@@ -16,8 +16,4 @@
 * [Day 3](striver-sheet/day-3.md)
 * [Day 4](striver-sheet/day-4.md)
 * [Day 5](striver-sheet/day-5.md)
-
-## gfg
-
-* [Day-6](gfg/day-6.md)
 
