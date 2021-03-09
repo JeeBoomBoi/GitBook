@@ -17,3 +17,7 @@
 * [Day 4](striver-sheet/day-4.md)
 * [Day 5](striver-sheet/day-5.md)
 
+## GFG
+
+* [Day-6](gfg/day-6.md)
+
