@@ -19,6 +19,7 @@
 
 ## GFG
 
-* [Day-6](gfg/day-6.md)
-* [Day-7](gfg/day-7.md)
+* [Day 6](gfg/day-6.md)
+* [Day 7](gfg/day-7.md)
+* [Day 8](gfg/day-8.md)
 
