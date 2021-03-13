@@ -27,7 +27,26 @@ public:
 
 {% tab title="Python" %}
 ```
-
+class Solution:
+    
+    def gcd(self, a, b):
+        if b == 0:
+            return a;
+        return self.gcd(b, a % b)
+    
+        
+    def lcm(self, a, b):
+        return (a * b) / self.gcd(a, b);
+        
+    
+    def lcmAndGcd(self, a , b):
+        # code here 
+        li = []
+        t1 = self.gcd(a, b)
+        t2 = int(self.lcm(a, b))
+        li.append(t2)
+        li.append(t1)
+        return li
 ```
 {% endtab %}
 {% endtabs %}
@@ -62,7 +81,20 @@ public:
 
 {% tab title="Python" %}
 ```
-
+import math
+class Solution:
+    def isPrime (self, n):
+        # code here
+        if n == 1:
+            return 0
+        if n == 2 or n == 3:
+            return 1
+        if n % 2 == 0 or n % 3 == 0:
+            return 0
+        for i in range(5, int(math.sqrt(n))+1, 6):
+            if n % i == 0 or n % (i + 2) == 0:
+                return 0
+        return 1
 ```
 {% endtab %}
 {% endtabs %}
@@ -99,7 +131,19 @@ public:
 
 {% tab title="Python" %}
 ```
-
+import math
+class Solution:
+    def largestPrimeFactor (self, n):
+        # code here
+        max = 0
+        for i in range(2, int(math.sqrt(n) + 1), 1):
+            while n % i == 0:
+                max = i
+                n = n / i
+                
+        if n > 1:
+            max = n
+        return int(max)
 ```
 {% endtab %}
 {% endtabs %}
