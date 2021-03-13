@@ -1,13 +1,14 @@
-# Day-6
+# Day 7
 
 **1. All divisors of a number**
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
  public:
     int kThSmallestFactor(int n , int k) {
         // code here
-        
+
         int divisorCount = 0;
         for (int i = 1; i * i < n; i++) 
         {
@@ -30,11 +31,11 @@
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(sqrt(N))
-Space Complexity: O(1)
+Time Complexity : O\(sqrt\(N\)\) Space Complexity: O\(1\)
+

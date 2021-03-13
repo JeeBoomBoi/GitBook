@@ -1,9 +1,10 @@
 # Day 8
 
 **1. Sieve of Eratosthenes**
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 public:
     vector<int> sieveOfEratosthenes(int n)
     {
@@ -36,22 +37,23 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(loglog(n))  
-Space Complexity: O(n)
+Time Complexity : O\(loglog\(n\)\)  
+Space Complexity: O\(n\)
 
 **2.Computing Power**
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 public:
     //You need to complete this fucntion
-    
+
     long long power(int n,int p)
     {
        //Your code here
@@ -73,21 +75,20 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
+Time Complexity : O\(log\(n\)\)  
+Space Complexity: O\(log\(n\)\)
 
-Time Complexity : O(log(n))  
-Space Complexity: O(log(n))
+**3.Iterative Power\(Fast Exponentiation\)**
 
-
-**3.Iterative Power(Fast Exponentiation)**
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 public:
     long long int power(long long int a, long long int b) { 
         //complete the function here
@@ -108,11 +109,12 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log(n))  
-Space Complexity: O(1)
+Time Complexity : O\(log\(n\)\)  
+Space Complexity: O\(1\)
+

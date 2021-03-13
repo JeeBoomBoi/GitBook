@@ -4,7 +4,7 @@
 
 ## Team Blind 75
 
-* [Day1](team-blind-75/untitled.md)
+* [Day1](team-blind-75/day1.md)
 
 ## CTCI <a id="ctcl"></a>
 

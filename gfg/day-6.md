@@ -1,17 +1,17 @@
-# Day-6
+# Day 6
 
 **1. LCM and GCD of two numbers**
 
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 public:
     long long gcd(long long a, long long b) {
         if (b == 0)
             return a;
         return gcd(b, a % b);
     }
-    
+
     long long lcm(long long a, long long b) {
         return (a * b) / gcd(a, b);
     }
@@ -26,19 +26,19 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 class Solution:
-    
+
     def gcd(self, a, b):
         if b == 0:
             return a;
         return self.gcd(b, a % b)
-    
-        
+
+
     def lcm(self, a, b):
         return (a * b) / self.gcd(a, b);
-        
-    
+
+
     def lcmAndGcd(self, a , b):
         # code here 
         li = []
@@ -51,14 +51,13 @@ class Solution:
 {% endtab %}
 {% endtabs %}
 
-Time complexity : O(log(min(a,b)))
-Space complexity: O(1)
-
+Time complexity : O\(log\(min\(a,b\)\)\) Space complexity: O\(1\)
 
 **2. Check for Prime**
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 public:
     int isPrime(int n){
         // code here
@@ -80,7 +79,7 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 import math
 class Solution:
     def isPrime (self, n):
@@ -99,14 +98,13 @@ class Solution:
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(sqrt(N))
-Space Complexity: O(1)
-
+Time Complexity : O\(sqrt\(N\)\) Space Complexity: O\(1\)
 
 **3. Highest Prime Factor**
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 public: 
     long long int largestPrimeFactor(int n){
         // code here
@@ -130,7 +128,7 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 import math
 class Solution:
     def largestPrimeFactor (self, n):
@@ -140,7 +138,7 @@ class Solution:
             while n % i == 0:
                 max = i
                 n = n / i
-                
+
         if n > 1:
             max = n
         return int(max)
@@ -148,5 +146,5 @@ class Solution:
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(sqrt(N))
-Space Complexity: O(1)
+Time Complexity : O\(sqrt\(N\)\) Space Complexity: O\(1\)
+
