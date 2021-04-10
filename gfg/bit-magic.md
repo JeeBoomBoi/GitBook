@@ -1,7 +1,7 @@
 # Bit Magic (All Problems)
 
 **1. Count total set bits**  
-Problem link: [link](t.ly/SS91)
+Problem link: [link](https://t.ly/SS91)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -41,7 +41,7 @@ Space Complexity: O(1)
 
 
 **2. Bit Difference**  
-Problem link: [link](t.ly/SCcs)
+Problem link: [link](https://t.ly/SCcs)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -79,7 +79,7 @@ Space Complexity: O(1)
 
 
 **3. Number is sparse or not**  
-Problem link: [link](t.ly/YNC1)
+Problem link: [link](https://t.ly/YNC1)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -119,7 +119,7 @@ Time Complexity : O(log N)
 Space Complexity: O(1)
 
 **4. Longest Consecutive 1's**  
-Problem link: [link](t.ly/psO5)
+Problem link: [link](https://t.ly/psO5)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -162,7 +162,7 @@ Space Complexity: O(1)
 
 
 **5. Binary To Gray Code equivalent**  
-Problem link: [link](t.ly/qzC1)
+Problem link: [link](https://t.ly/qzC1)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -191,7 +191,7 @@ Space Complexity: O(1)
 
 
 **6. Gray to Binary equivalent**  
-Problem link: [link](t.ly/vvAD)
+Problem link: [link](https://t.ly/vvAD)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -227,7 +227,7 @@ Space Complexity: O(1)
 
 
 **7. Power of 2**  
-Problem link: [link](t.ly/t6JR)
+Problem link: [link](https://t.ly/t6JR)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -258,7 +258,7 @@ Space Complexity: O(1)
 
 
 **8. Swap all odd and even bits**  
-Problem link: [link](t.ly/YC11)
+Problem link: [link](https://t.ly/YC11)
 {% tabs %}
 {% tab title="CPP" %}
 ```
@@ -292,7 +292,7 @@ Space Complexity: O(1)
 
 
 **9. Maximum AND Value**  
-Problem link: [link](t.ly/7YR0)
+Problem link: [link](https://t.ly/7YR0)
 {% tabs %}
 {% tab title="CPP" %}
 ```
