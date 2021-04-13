@@ -24,4 +24,5 @@
 * [Day 8](gfg/day-8.md)
 * [Day 9](gfg/day-9.md)
 * [Bit Magic](gfg/bit-magic.md)
+* [Recursion](gfg/recursion.md)
 
