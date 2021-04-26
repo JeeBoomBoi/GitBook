@@ -4,7 +4,7 @@
 
 ## Team Blind 75
 
-* [Day1](team-blind-75/day1.md)
+* [Day1](team-blind-75/day-1.md)
 
 ## CTCI <a id="ctcl"></a>
 
@@ -25,4 +25,8 @@
 * [Day 9](gfg/day-9.md)
 * [Bit Magic](gfg/bit-magic.md)
 * [Recursion](gfg/recursion.md)
+
+## Code Library
+
+* [Bit Magic](code-library/bitmagic.md)
 

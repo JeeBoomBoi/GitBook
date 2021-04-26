@@ -37,8 +37,25 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```text
+```
+def sieveOfEratosthenes(self, n):
+    	#code here 
+        prime = [True for i in range(n+1)]
+    	res = []
+    	p = 2
+    	
+    	while p * p <= n:
+    	    if prime[p] == True:
+    	        for i in range(p * p, n+1, p):
+    	            prime[i] = False
+    	    
+    	    p += 1
+    	    
+    	for i in range(2, n+1):
+    	    if prime[i] == True:
+    	        res.append(i)
 
+        return res
 ```
 {% endtab %}
 {% endtabs %}
@@ -75,8 +92,19 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```text
-
+```
+class Solution:
+    #Complete this function
+    def power(self,n,r):
+        #Your code here
+        temp = 0
+        if (r == 0):
+            return 1
+        temp = self.power(n, int(r/2))
+        if (r % 2 == 0):
+            return temp * temp % 1000000007
+        else:
+            return n * temp * temp % 1000000007
 ```
 {% endtab %}
 {% endtabs %}
