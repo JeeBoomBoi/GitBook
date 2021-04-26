@@ -29,4 +29,6 @@
 ## Code Library
 
 * [Bit Magic](code-library/bitmagic.md)
+* [Recursion](code-library/recursion.md)
+* [Arrays](code-library/arrays.md)
 

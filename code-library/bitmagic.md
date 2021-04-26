@@ -84,7 +84,7 @@ int missingNumber(vector<int> &nums)
 
 ```
 
-## Odd one occuring
+## Odd one occurring
 
 ```
 // Odd one occuring
@@ -99,7 +99,7 @@ int oddOne(int arr[], int n)
 }
 ```
 
-## Two odd occuring
+## Two odd occurring
 
 ```
 vector<int> twoOddNum(int arr[], int n)
