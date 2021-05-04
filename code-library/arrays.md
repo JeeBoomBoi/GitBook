@@ -173,3 +173,46 @@ void rotateArr(int arr[], int d, int n)
 }
 
 ```
+
+# Leader in an array
+
+```
+// Naive
+vector<int> leaders(vector<int> arr)
+{
+    vector<int> res;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        bool flag = false;
+        for (int j = i + 1; j < arr.size(); j++)
+        {
+            if (arr[i] <= arr[j])
+            {
+                flag = true;
+                break;
+            }
+        }
+        if (flag == false)
+            res.push_back(arr[i]);
+    }
+    return res;
+}
+
+// Efficient
+vector<int> leaders(vector<int> arr)
+{
+    vector<int> res;
+    n = arr.size()
+    int curr = arr[n-1];
+    res.push_back(arr[n-1]);
+    for (int i = n - 2; i >= 0; i--)
+    {
+        if (curr < arr[i])
+        {
+            curr = arr[i];
+            res.push_back(arr[i]);
+        }
+    }
+    return res;
+}
+```
