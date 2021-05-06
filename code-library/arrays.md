@@ -174,7 +174,7 @@ void rotateArr(int arr[], int d, int n)
 
 ```
 
-# Leader in an array
+## Leader in an array
 
 ```
 // Naive
@@ -217,7 +217,7 @@ vector<int> leaders(vector<int> arr)
 }
 ```
 
-# Maximum difference in an array
+## Maximum difference in an array
 ```
 // Naive
 int maxDiff(int arr[], int n)
@@ -249,8 +249,7 @@ int maxDiff(int arr[], int n)
 
 ### 6/5/21
 
-# Frquencies in a Sorted Array
-
+## Frquencies in a Sorted Array
 ```
 void printFreq(int arr[], int n)
 {
@@ -273,8 +272,7 @@ void printFreq(int arr[], int n)
 }
 ```
 
-# Stock Buy and Sell
-
+## Stock Buy and Sell
 ```
 // Naive
 int maxProfit(int price[], int start, int end)
@@ -311,8 +309,7 @@ int maxProfit(int price[], int n)
 }
 ```
 
-# Maximum consecutive 1s
-
+## Maximum consecutive 1s
 ```
 // Naive
 int maxConsOnes(int arr[], int n)
@@ -355,8 +352,7 @@ int maxConsOnes(int arr[], int n)
 }
 ```
 
-# Maximum Sub Array
-
+## Maximum Sub Array
 ```
 // Naive
 int maxSubArray(int arr[], int n)
