@@ -1,6 +1,8 @@
+# Arrays
+
 ## Reverse an array
 
-```
+```text
 void reverseArray(int arr[], int n)
 {
     int low = 0, high = n - 1;
@@ -17,7 +19,7 @@ void reverseArray(int arr[], int n)
 
 ## Remove Duplicates from a sorted array
 
-```
+```text
 // input = [10, 20, 20, 30, 30, 30, 30]
 // size = 7
 
@@ -62,7 +64,8 @@ int removeDuplicates(int arr[], int n)
 ```
 
 ## Move Zeroes to End
-```
+
+```text
 input = [0, 0, 10, 12, 0, 1,3]
 output = [10, 12, 1, 3, 0, 0]
 
@@ -102,7 +105,7 @@ void moveToEnd(int arr[], int n)
 
 ## Left Rotate Array by one
 
-```
+```text
 void rotateLeft(int arr[], int n)
 {
     int temp = arr[0];
@@ -114,10 +117,9 @@ void rotateLeft(int arr[], int n)
 }
 ```
 
-
 ## Left Rotate Array by D
 
-```
+```text
 \\ Naive
 void rotateLeftbyOne(int arr[], int n)
 {
@@ -171,12 +173,11 @@ void rotateArr(int arr[], int d, int n)
     reverse(arr, d, n - 1);
     reverse(arr, 0, n - 1);
 }
-
 ```
 
 ## Leader in an array
 
-```
+```text
 // Naive
 vector<int> leaders(vector<int> arr)
 {
@@ -218,7 +219,8 @@ vector<int> leaders(vector<int> arr)
 ```
 
 ## Maximum difference in an array
-```
+
+```text
 // Naive
 int maxDiff(int arr[], int n)
 {
@@ -250,7 +252,8 @@ int maxDiff(int arr[], int n)
 ### 6/5/21
 
 ## Frquencies in a Sorted Array
-```
+
+```text
 void printFreq(int arr[], int n)
 {
     int i = 1, freq = 1;
@@ -273,7 +276,8 @@ void printFreq(int arr[], int n)
 ```
 
 ## Stock Buy and Sell
-```
+
+```text
 // Naive
 int maxProfit(int price[], int start, int end)
 {
@@ -310,7 +314,8 @@ int maxProfit(int price[], int n)
 ```
 
 ## Maximum consecutive 1s
-```
+
+```text
 // Naive
 int maxConsOnes(int arr[], int n)
 {
@@ -353,7 +358,8 @@ int maxConsOnes(int arr[], int n)
 ```
 
 ## Maximum Sub Array
-```
+
+```text
 // Naive
 int maxSubArray(int arr[], int n)
 {
@@ -382,14 +388,13 @@ int maxSubArray(int arr[], int n)
     }
     return res;
 }
-
 ```
 
 ### 7/5/21
 
-
 ## Trapping RainWater
-```
+
+```text
 // Naive
 int getWater(int arr[], int n)
 {
@@ -434,12 +439,11 @@ int getWater(int arr[], int n)
 }
 ```
 
-
 ### 13/5/21
 
-## Maximum length even odd subarray (Important)
+## Maximum length even odd subarray \(Important\)
 
-```
+```text
 // Naive
 int maxEvenOdd(int arr[], int n)
 {
@@ -487,7 +491,8 @@ int maxEvenOdd(int arr[], int n)
 ```
 
 ## Maximum Circular Subarray sum
-```
+
+```text
 // Naive
 int maxCircularSum(int arr[], int n)
 {
@@ -615,23 +620,23 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 def sieveOfEratosthenes(self, n):
-    	#code here 
+        #code here 
         prime = [True for i in range(n+1)]
-    	res = []
-    	p = 2
-    	
-    	while p * p <= n:
-    	    if prime[p] == True:
-    	        for i in range(p * p, n+1, p):
-    	            prime[i] = False
-    	    
-    	    p += 1
-    	    
-    	for i in range(2, n+1):
-    	    if prime[i] == True:
-    	        res.append(i)
+        res = []
+        p = 2
+
+        while p * p <= n:
+            if prime[p] == True:
+                for i in range(p * p, n+1, p):
+                    prime[i] = False
+
+            p += 1
+
+        for i in range(2, n+1):
+            if prime[i] == True:
+                res.append(i)
 
         return res
 ```
@@ -670,7 +675,7 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 class Solution:
     #Complete this function
     def power(self,n,r):

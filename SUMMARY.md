@@ -19,10 +19,6 @@
 
 ## GFG
 
-* [Day 6](gfg/day-6.md)
-* [Day 7](gfg/day-7.md)
-* [Day 8](gfg/day-8.md)
-* [Day 9](gfg/day-9.md)
 * [Bit Magic](gfg/bit-magic.md)
 * [Recursion](gfg/recursion.md)
 

@@ -1,6 +1,6 @@
-## Printing all permutations
+# Recursion
 
-```
+```text
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,3 +25,4 @@ int main()
     permute(s);
 }
 ```
+

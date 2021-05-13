@@ -2,9 +2,10 @@
 
 **1. Print 1 To N Without Loop**  
 Problem link: [link](https:/t.ly/DFSF)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     //Complete this function
@@ -21,21 +22,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(N)   
-Space Complexity: O(N)
-
+Time Complexity : O\(N\)  
+Space Complexity: O\(N\)
 
 **2. Sum of Digits of a Number**  
 Problem link: [link](https://t.ly/wfJF)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
   public:
     // Complete this function
@@ -52,21 +53,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(Logn)   
-Space Complexity: O(Logn)
-
+Time Complexity : O\(Logn\)  
+Space Complexity: O\(Logn\)
 
 **3. Count Total Digits in a Number**  
 Problem link: [link](https://t.ly/L5AB)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
   public:
     //Complete this function
@@ -82,20 +83,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(logn)   
-Space Complexity: O(logn)
+Time Complexity : O\(logn\)  
+Space Complexity: O\(logn\)
 
 **4. Digital Root**  
 Problem link: [link](https://t.ly/6gTY)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
   public:
     //Complete this function
@@ -111,21 +113,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O((Num of Digits)^2)   
-Space Complexity: O(Num of Digits)
-
+Time Complexity : O\(\(Num of Digits\)^2\)  
+Space Complexity: O\(Num of Digits\)
 
 **5. Fibonacci Using Recursion**  
 Problem link: [link](https://t.ly/MuBW)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     //Complete this function
@@ -141,20 +143,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(2^n)   
-Space Complexity: O(n)
+Time Complexity : O\(2^n\)  
+Space Complexity: O\(n\)
 
 **6. Tower Of Hanoi**  
 Problem link: [link](https://)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     // You need to complete this function
@@ -179,21 +182,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(2^n)   
-Space Complexity: O(n)
-
+Time Complexity : O\(2^n\)  
+Space Complexity: O\(n\)
 
 **7. Josephus problem**  
 Problem link: [link](https://t.ly/84F2)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution
 {
     public:
@@ -214,50 +217,50 @@ class Solution
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(n)   
-Space Complexity: O(n)
-
+Time Complexity : O\(n\)  
+Space Complexity: O\(n\)
 
 **8. Power Using Recursion**  
 Problem link: [link](https://t.ly/rgW8)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 int RecursivePower(int n, int p)
 {
     //Your code here
     // long long int mod = pow(10, 9) + 7;
     return p == 0 ? 1 : (n * RecursivePower(n, p - 1));
-} 
+}
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(p)   
-Space Complexity: O(p)
-
+Time Complexity : O\(p\)  
+Space Complexity: O\(p\)
 
 **9. Power Of Numbers**  
 Problem link: [link](https://t.ly/cP2R)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
 public:
     //You need to complete this fucntion
-    
+
     long long power(int n,int p)
     {
        //Your code here
@@ -279,21 +282,21 @@ public:
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(logn)   
-Space Complexity: O(logn)
-
+Time Complexity : O\(logn\)  
+Space Complexity: O\(logn\)
 
 **10. Power Set Using Recursion**  
 Problem link: [link](https://)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 void getAllSet(string s, int i, string curr, vector<string> &v)
 {
     if(i == s.length())
@@ -316,11 +319,12 @@ vector <string> powerSet(string s)
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(2^|s|)   
-Space Complexity: O(|s|)
+Time Complexity : O\(2^\|s\|\)  
+Space Complexity: O\(\|s\|\)
+

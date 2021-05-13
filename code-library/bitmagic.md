@@ -1,6 +1,8 @@
+# Bit Magic
+
 ## Check power of 2
 
-```
+```text
 bool isPowerofTwo(long long n)
 {
 
@@ -13,7 +15,7 @@ bool isPowerofTwo(long long n)
 
 ## Count set bits
 
-```
+```text
 #include<bits/stdc++.h>
 
 // naive approach - O'(total number of bits)
@@ -69,7 +71,7 @@ int count(int n)
 
 ## Find missing number in an array
 
-```
+```text
 // Find the missing number in the array
 int missingNumber(vector<int> &nums)
 {
@@ -81,12 +83,11 @@ int missingNumber(vector<int> &nums)
     }
     return x ^ y;
 }
-
 ```
 
 ## Odd one occurring
 
-```
+```text
 // Odd one occuring
 int oddOne(int arr[], int n)
 {
@@ -101,7 +102,7 @@ int oddOne(int arr[], int n)
 
 ## Two odd occurring
 
-```
+```text
 vector<int> twoOddNum(int arr[], int n)
 {
     // code here
@@ -132,3 +133,4 @@ vector<int> twoOddNum(int arr[], int n)
     return res;
 }
 ```
+

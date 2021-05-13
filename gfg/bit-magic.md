@@ -1,4 +1,4 @@
-# Bit Magic (All Problems)
+# Bit Magic
 
 **1. Find first set bit**  
 Problem link: [link](https://t.ly/1K0c)
@@ -110,9 +110,10 @@ Space Complexity: O\(1\)
 
 **4. Count total set bits**  
 Problem link: [link](https://t.ly/SS91)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     // n: input to count the number of set bits
@@ -138,26 +139,26 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log N)   
-Space Complexity: O(1)
-
+Time Complexity : O\(log N\)  
+Space Complexity: O\(1\)
 
 **5. Bit Difference**  
 Problem link: [link](https://t.ly/SCcs)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     // Function to find number of bits needed to be flipped to convert A to B
     int countBitsFlip(int a, int b){
-        
+
         // Your logic here
         int count = 0;
         while(a != 0 || b != 0)
@@ -176,27 +177,27 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log N)   
-Space Complexity: O(1)
-
+Time Complexity : O\(log N\)  
+Space Complexity: O\(1\)
 
 **6. Number is sparse or not**  
 Problem link: [link](https://t.ly/YNC1)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     // function to check if the number is sparse
     // n : is the number to check if it is sparse
     bool isSparse(int n){
-        
+
         // Your code
         int c = 0;
         while (n != 0)
@@ -217,20 +218,21 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log N)   
-Space Complexity: O(1)
+Time Complexity : O\(log N\)  
+Space Complexity: O\(1\)
 
 **7. Longest Consecutive 1's**  
 Problem link: [link](https://t.ly/psO5)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution
 {
     public:
@@ -259,27 +261,27 @@ class Solution
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log N)   
-Space Complexity: O(1)
-
+Time Complexity : O\(log N\)  
+Space Complexity: O\(1\)
 
 **8. Binary To Gray Code equivalent**  
 Problem link: [link](https://t.ly/qzC1)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     //  Function to find the gray code of given number n
     int greyConverter(int n)
     {
-        
+
         // Your code here
         return n ^ (n >> 1);
     }
@@ -288,28 +290,28 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(1)   
-Space Complexity: O(1)
-
+Time Complexity : O\(1\)  
+Space Complexity: O\(1\)
 
 **9. Gray to Binary equivalent**  
 Problem link: [link](https://t.ly/vvAD)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
-    
+
     // function to convert a given Gray equivalent n to Binary equivalent.
     public:
     int grayToBinary(int n)
     {
-        
+
         // Your code here
         int num = n;
         while (n >= 1)
@@ -324,86 +326,86 @@ class Solution{
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log N)   
-Space Complexity: O(1)
-
+Time Complexity : O\(log N\)  
+Space Complexity: O\(1\)
 
 **10. Power of 2**  
 Problem link: [link](https://t.ly/t6JR)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     // Function to check if given number n is a power of two.
     bool isPowerofTwo(long long n){
-        
+
         // Your code here    
         if (n == 0)
             return false;
         return ((n & (n - 1)) == 0);
-        
+
     }
 };
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(log N)   
-Space Complexity: O(1)
-
+Time Complexity : O\(log N\)  
+Space Complexity: O\(1\)
 
 **11. Swap all odd and even bits**  
 Problem link: [link](https://t.ly/YC11)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution{
     public:
     // function to swap odd and even bits
     unsigned int swapBits(unsigned int n)
     {
-    	
-    	// Your code here
-    	int even = (n & 0xAAAAAAAA);
-    	int odd = (n & 0x55555555);
-    	even = even >> 1;
-    	odd = odd << 1;
-    	int out = (even | odd);
-    	return out;
+
+        // Your code here
+        int even = (n & 0xAAAAAAAA);
+        int odd = (n & 0x55555555);
+        even = even >> 1;
+        odd = odd << 1;
+        int out = (even | odd);
+        return out;
     }
 };
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(1)   
-Space Complexity: O(1)
-
+Time Complexity : O\(1\)  
+Space Complexity: O\(1\)
 
 **12. Maximum AND Value**  
 Problem link: [link](https://t.ly/7YR0)
+
 {% tabs %}
 {% tab title="CPP" %}
-```
+```text
 class Solution
 {
     public:
@@ -426,7 +428,7 @@ class Solution
         for (int bit = 31; bit >= 0; bit--)
         {
             count = checkbit(res | (1 << bit), arr, n);
-            
+
             if(count >= 2)
                 res |= 1 << bit;
         }
@@ -437,12 +439,12 @@ class Solution
 {% endtab %}
 
 {% tab title="Python" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-Time Complexity : O(N * log M)   
-Space Complexity: O(1)
+Time Complexity : O\(N \* log M\)  
+Space Complexity: O\(1\)
 
