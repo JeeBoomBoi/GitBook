@@ -19,6 +19,7 @@
 
 ## GFG
 
+* [Math](gfg/math.md)
 * [Bit Magic](gfg/bit-magic.md)
 * [Recursion](gfg/recursion.md)
 
