@@ -384,3 +384,157 @@ int maxSubArray(int arr[], int n)
 }
 
 ```
+
+### 7/5/21
+
+
+## Trapping RainWater
+```
+// Naive
+int getWater(int arr[], int n)
+{
+    int res = 0;
+    for (int i = 1; i < n-1; i++)
+    {
+        int lmax = 0;
+        for (int j = 0; j < i; j++)
+        {
+            lmax = max(lmax, arr[j]);
+        }
+        int rmax = 0;
+        for (int j = i+1; j < n; j++)
+        {
+            rmax = max(rmax, arr[j]);
+        }
+        res += (min(lmax, rmax) - arr[i]);
+    }
+    return res;
+}
+
+// Efficient
+int getWater(int arr[], int n)
+{
+    int res = 0;
+    int lmax[n], rmax[n];
+    lmax[0] = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        lmax[i] = max(arr[i], lmax[i-1]);
+    }
+    rmax[0] = arr[n-1];
+    for (int i = n-2; i >= 0; i--)
+    {
+        rmax[i] = max(arr[i], rmax[i+1]);
+    }
+    for (int i = 1; i < n-1; i++)
+    {
+        res += (min(lmax[i], rmax[i]) - arr[i]);
+    }
+    return res;
+}
+```
+
+
+### 13/5/21
+
+## Maximum length even odd subarray
+
+```
+// Naive
+int maxEvenOdd(int arr[], int n)
+{
+    int res = 0;
+    for(int i = 0; i < n; i++)
+    {
+        int curr = 0;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[j] % 2 == 0 && arr[j-1] % 2 != 0) ||
+                (arr[j] % 2 != 0 && arr[j-1] % 2 == 0)
+            {
+                curr++;
+                res = max(curr, res);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    return res;
+}
+
+// Efficient - Kadane 
+int maxEvenOdd(int arr[], int n)
+{
+    int curr = 1;
+    int res = 1;
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[j] % 2 == 0 && arr[j-1] % 2 != 0) ||
+                (arr[j] % 2 != 0 && arr[j-1] % 2 == 0)
+        {
+            curr++;
+            res = max(curr, res);
+        }
+        else
+        {
+            curr = 1;
+        }
+    }
+    return res;
+}
+```
+
+## Maximum Circular Subarray sum
+```
+// Naive
+int maxCircularSum(int arr[], int n)
+{
+    int res = arr[0];
+    for (int i = 0; i < n; i++)
+    {
+        int curr_max = res[i];
+        int curr_sum = res[i];
+        for (int j = 1; j < n; j++)
+        {
+            int index = (i + j) % n;
+            curr_sum += arr[index];
+            curr_max = max(curr_max, curr_sum);
+        }
+        res = max(curr_max, res);
+    }
+    return res;
+}
+
+// Efficient
+int maxNormalSum(int arr[], int n)
+{
+    int res = arr[0];
+    int maxEnd = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        maxEnd = max(maxEnd + arr[i], arr[i]);
+        res = max(maxEnd, res);
+    }
+    return res;
+}
+
+int maxCircularSum(int arr[], int n)
+{
+    int maxSum = maxNormalSum(arr, n);
+    if (maxSum < 0)
+    {
+        return maxSum;
+    }
+    int arrSum = 0;
+    // arrSum - minimum Sub Array
+    for (int i = 0; i < n; i++)
+    {
+        arrSum += arr[i];
+        arr[i] = -1 * arr[i];
+    }
+    int maxCircular = arrSum + maxNormalSum(arr, n);
+    return max(maxSum, maxCircular)
+}
+```
