@@ -120,7 +120,7 @@ void rotateLeft(int arr[], int n)
 ## Left Rotate Array by D
 
 ```text
-\\ Naive
+ Naive
 void rotateLeftbyOne(int arr[], int n)
 {
     int temp = arr[0];
@@ -441,7 +441,7 @@ int getWater(int arr[], int n)
 
 ### 13/5/21
 
-## Maximum length even odd subarray \(Important\)
+## Maximum length even odd subarray (Important)
 
 ```text
 // Naive
@@ -544,188 +544,167 @@ int maxCircularSum(int arr[], int n)
 }
 ```
 
-**4. All divisors of a number**
-
-{% tabs %}
-{% tab title="CPP" %}
-```text
- public:
-    int kThSmallestFactor(int n , int k) {
-        // code here
-
-        int divisorCount = 0;
-        for (int i = 1; i * i < n; i++) 
+## Majority Elements
+```
+int findMajority(int arr[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        int count = 1;
+        for (int j = i + 1; i < n; i++)
         {
-            if (n % i == 0)
-                divisorCount++;
-            if (divisorCount == k)
-                return i;
+            if (arr[i] == arr[j])
+                count++;
         }
-        for (int i = sqrt(n); i >= 1; i--)
+        if (count > n / 2)
         {
-            if (n % i == 0)
-                divisorCount++;
-            if (divisorCount == k)
-                return n / i;
+            return i;
         }
+    }
+    return -1;
+}
+
+// Efficient
+// moore voting algorithm
+int findMajority(int arr[], int n)
+{
+    int res = 0;
+    int count = 1;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[res] == arr[i])
+            count++;
+        else
+            count--;
+
+        if (count == 0)
+        {
+            res = i;
+            count = 1;
+        }
+    }
+
+    count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[res] == arr[i])
+            count++;
+    }
+    if (count <= n/2)
         return -1;
-    }
-};
+    return res;
+}
 ```
-{% endtab %}
 
-{% tab title="Python" %}
-```text
+## Minimum Consecutive Flips
 
 ```
-{% endtab %}
-{% endtabs %}
-
-Time Complexity : O\(sqrt\(N\)\) Space Complexity: O\(1\)
-
-**5. Sieve of Eratosthenes**
-
-{% tabs %}
-{% tab title="CPP" %}
-```text
-public:
-    vector<int> sieveOfEratosthenes(int n)
+void printGroups(int arr, int n)
+{
+    // flip the 2nd group always
+    for (int i = 1; i < n; i++)
     {
-        // Write Your Code here
-        bool prime[n + 1];
-        memset(prime, true, sizeof(prime));
-
-        vector<int> res;
-        for (int i = 2; i * i <= n; i++)
+        if (arr[i] != arr[i-1])
         {
-            if (prime[i] == true)
-            {
-                for (int j = i * i; j <= n; j = j + i)
-                {
-                    prime[j] = false;
-                }
-            }
+            if (arr[i] != arr[0])
+                cout << "From " << i << "to ";
+            else
+                cout << i - 1 << endl;
         }
-        for (int i = 2; i <= n; i++)
-        {
-            if (prime[i] == true)
-            {
-                res.push_back(i);
-            }
-        }
-        return res;
     }
-};
+
+    if (arr[n-1] != arr[0])
+        cout << n - 1 << endl;
+}
 ```
-{% endtab %}
 
-{% tab title="Python" %}
-```text
-def sieveOfEratosthenes(self, n):
-        #code here 
-        prime = [True for i in range(n+1)]
-        res = []
-        p = 2
-
-        while p * p <= n:
-            if prime[p] == True:
-                for i in range(p * p, n+1, p):
-                    prime[i] = False
-
-            p += 1
-
-        for i in range(2, n+1):
-            if prime[i] == True:
-                res.append(i)
-
-        return res
+## Maximum sum of K Consecutive elements (Sliding window)
 ```
-{% endtab %}
-{% endtabs %}
-
-Time Complexity : O\(loglog\(n\)\)  
-Space Complexity: O\(n\)
-
-**6.Computing Power**
-
-{% tabs %}
-{% tab title="CPP" %}
-```text
-public:
-    //You need to complete this fucntion
-
-    long long power(int n,int p)
+// Naive O((n-k) * k)
+int slideSum(int arr[], int n, int k)
+{
+    int max_sum = INT_MIN;
+    for (int i = 0; i + k - 1< n; i++)
     {
-       //Your code here
-       if (p == 0)  
-            return 1;
-        long long temp = power(n, p / 2);
-        temp = (temp * temp) % 1000000007;
-        if (p % 2 == 0)
+        int sum = 0;
+        for (int j = 0; j < k; j++)
         {
-            return temp % 1000000007;
+            sum += arr[i + j];
         }
-        else 
-        {
-            return (temp * n) % 1000000007;
-        }
+        max_sum = max(max_sum, sum);
     }
-};
-```
-{% endtab %}
+    return max_sum;
+}
 
-{% tab title="Python" %}
-```text
-class Solution:
-    #Complete this function
-    def power(self,n,r):
-        #Your code here
-        temp = 0
-        if (r == 0):
-            return 1
-        temp = self.power(n, int(r/2))
-        if (r % 2 == 0):
-            return temp * temp % 1000000007
-        else:
-            return n * temp * temp % 1000000007
-```
-{% endtab %}
-{% endtabs %}
-
-Time Complexity : O\(log\(n\)\)  
-Space Complexity: O\(log\(n\)\)
-
-**7.Iterative Power\(Fast Exponentiation\)**
-
-{% tabs %}
-{% tab title="CPP" %}
-```text
-public:
-    long long int power(long long int a, long long int b) { 
-        //complete the function here
-        long long res = 1;
-        while(b > 0)
-        {
-            if (b & 1)
-            {
-                res = (res * a) % 1000000007;
-            }
-            a = (a * a) % 1000000007;
-            b = b >> 1;
-        }
-        return res % 1000000007;
+int slideSum(int arr[], int n, int k)
+{
+    int curr_sum = 0;
+    for (int i = 0; i < k; i++)
+    {
+        curr_sum += arr[i];
     }
-};
+    int max_sum = curr_sum;
+    for (int i = k; i < n; i++)
+    {
+        curr_sum += (arr[i] - arr[i-k]);
+        max_sum = max(max_sum, curr_sum);
+    }
+    return max_sum;
+}
 ```
-{% endtab %}
 
-{% tab title="Python" %}
-```text
-
+## Subarray with given sum
 ```
-{% endtab %}
-{% endtabs %}
+// only works for non negative numbers
+bool isSubPresent(int arr[], int n, int sum)
+{
+    int curr_sum = arr[0];
+    int start = 0;
+    for (int end = 1; end < n; end++)
+    {
+        while(curr_sum > sum && start < end - 1)
+        {
+            curr_sum -= arr[start];
+            start++;
+        }
+        if (curr_sum == sum)
+            return true;
+        if (curr_sum < sum)
+            curr_sum += arr[end];
+    }
+    return (curr_sum == sum);
+}
+```
 
-Time Complexity : O\(log\(n\)\)  
-Space Complexity: O\(1\)
+### 14/5/21
 
+## Prefix Sum
+```
+// Build prefix sum array
+int* makePrefixArr(int arr[], int n)
+{
+    for(int i = 1; i < n; i++)
+    {
+        arr[i] = arr[i] + arr[i-1];
+    }
+    return arr;
+}
+
+int getSum(int arr[], int l, int m)
+{
+    if (l != 0)
+        return arr[r] - arr[l-1];
+    else
+        return arr[r];
+}
+
+int main() {
+    // Write C++ code here
+    int arr[] = {1,2,3,4,5};
+    int *a = makePrefixArr(arr, 5);
+    int l, r;
+    cin >> l >> r;
+    cout << getSum(a, l, r);
+    return 0;
+}
+```
