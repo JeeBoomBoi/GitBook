@@ -708,3 +708,39 @@ int main() {
     return 0;
 }
 ```
+
+## Equlibrium Point
+```
+int equli(int arr[], int n)
+{
+    int l_sum = 0, r_sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+            l_sum += arr[j];
+        for (int k = i + 1; k < n; k++)
+            r_sim += arr[k];
+        if (l_sum == r_sum)
+            return i;
+    }
+    return -1;
+}
+
+bool isEqPoint(int arr[], int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    int l_sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (l_sum == sum - arr[i])
+            return true;
+        l_sum += arr[i];
+        sum -= arr[i];
+    }
+    return false;
+}
+```
