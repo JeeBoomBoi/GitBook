@@ -744,3 +744,31 @@ bool isEqPoint(int arr[], int n)
     return false;
 }
 ```
+
+### 15/5/21
+
+## Maximum appearing element in the given ranges
+
+```
+int maxOccur(int l[], int r[], int n)
+{
+    vector<int> arr[1000];
+    for (int i = 0; i < n; i++)
+    {
+        arr[l[i]]++;
+        arr[r[i] + 1]--;
+    }
+    int maxi = arr[0];
+    int res = 0;
+    for (int i = 1; i < 1000; i++)
+    {
+        arr[i] += arr[i-1];
+        if (maxi <  arr[i])
+        {
+            maxi = arr[i];
+            res = i;
+        }
+    }
+    return res;
+}
+```
