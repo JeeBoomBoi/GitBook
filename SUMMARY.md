@@ -22,11 +22,10 @@
 * [Math](gfg/math.md)
 * [Bit Magic](gfg/bit-magic.md)
 * [Recursion](gfg/recursion.md)
-* [Linked List](gfg/linkedlist.md)
 
 ## Code Library
 
 * [Bit Magic](code-library/bitmagic.md)
 * [Recursion](code-library/recursion.md)
 * [Arrays](code-library/arrays.md)
-
+* [Linked List](code-library/linkedlist.md)
