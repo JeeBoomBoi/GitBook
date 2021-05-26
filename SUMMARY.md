@@ -29,3 +29,4 @@
 * [Recursion](code-library/recursion.md)
 * [Arrays](code-library/arrays.md)
 * [Linked List](code-library/linkedlist.md)
+* [Searching](code-library/searching.md)
