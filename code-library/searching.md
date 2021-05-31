@@ -3,7 +3,7 @@
 ### 26/5/2021
 
 ## Binary Search
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -48,7 +48,7 @@ int main()
 ```
 
 ## First Occurence
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -104,7 +104,7 @@ int main()
 ### 29/5/2021
 
 ## Last Occurence
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -157,7 +157,7 @@ int main()
 ```  
 
 ## Count Occurence
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -223,7 +223,7 @@ int main()
 ```
 
 ## Count Ones in Sorted
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -259,7 +259,7 @@ int main()
 ```
 
 ## Square Root
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -294,7 +294,7 @@ int main()
 ```
 
 ## Search Infinite Sized Array
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -403,5 +403,117 @@ int main()
 {
     int arr[] = {5, 20, 40, 30, 20, 50, 60};
     cout << getaPeak(arr,7) << endl;
+}
+```
+
+### 31/5/21
+
+## Two Pointer Approach
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isPair(int arr[], int n, int x)
+{
+    int left = 0;
+    int right = n - 1;
+    while(left < right)
+    {
+        if (arr[left] + arr[right] == x)
+            return true;
+        else if (arr[left] + arr[right] < x)
+            left++;
+        else
+            right--;
+    }
+    return false;
+}
+
+int main()
+{
+    int arr[] = {2,3,4,6,8,10,12,14};
+    cout << isPair(arr, 8, 28) << endl;
+}
+```
+
+## Finding Triplets
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isPair(int arr[], int left, int right, int x)
+{
+    while(left < right)
+    {
+        if (arr[left] + arr[right] == x)
+            return true;
+        else if (arr[left] + arr[right] < x)
+            left++;
+        else
+            right--;
+    }
+    return false;
+}
+
+bool isTriplet(int arr[], int n, int x)
+{
+    for (int i = 0; i < n; i++)
+    {
+        return isPair(arr, i + 1, n - 1, x - arr[i]);
+    }
+    return false;
+}
+
+int main()
+{
+    int arr[] = {1,2,3,4,5,6,7,8};
+    cout << isTriplet(arr, 8, 15) << endl;
+}
+```
+
+## Median of two Sorted Arrays
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+double getMedian(int a1[], int a2[], int n1, int n2)
+{
+    if (n1 > n2)
+    {
+        swap(a1, a2);
+        swap(n1, n2);
+    }
+    int begin = 0;
+    int end = n1 - 1;
+    while(begin <= end)
+    {
+        int i1 = (begin + end) / 2;
+        int i2 = (n1 + n2 + 1) / 2 - i1;
+
+        int min1 = (i1 == n1) ? INT_MAX : a1[i1];
+        int max1 = (i1 == 0) ? INT_MIN : a1[i1 - 1];
+
+        int min2 = (i2 == n2) ? INT_MAX : a2[i2];
+        int max2 = (i2 == 0) ? INT_MIN : a2[i2 - 1];
+
+        if (max1 <= min2 && max2 <= min1)
+        {
+            if ((n1 + n2) % 2 == 0)
+                return ((double) max(max1, max2) + min(min1, min2)) / 2;
+            else
+                return (double) max(max1, max2); 
+        }
+        else if(max1 > min2)
+            end = i1 - 1;
+        else
+            begin = i1 + 1;
+    }
+}
+
+int main()
+{
+    int a1[] = {30, 40, 50, 60};
+    int a2[] = {5, 6, 7, 8, 9};
+    cout << getMedian(a1, a2, 4, 5) << endl;
 }
 ```
