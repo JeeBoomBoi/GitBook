@@ -517,3 +517,195 @@ int main()
     cout << getMedian(a1, a2, 4, 5) << endl;
 }
 ```
+
+### 17/6/21
+
+## Majority Element
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Naive
+int NaivefindMajority(int nums[], int n) {
+    for (int i = 0; i < n; i++) {
+        int count = 1;
+        for (int j = i + 1; j < n; j++) {
+            if (nums[i] == nums[j])
+                count++;
+            if (count > n / 2)
+                return i;
+        }
+    }
+    return -1;
+}
+
+// Efficient
+int findMajority(int nums[], int n) {
+    int res = 0, count = 1;
+    for (int i = 1; i < n; i++) {
+        if (nums[res] == nums[i])
+            count++;
+        else
+            count--;
+        if (count == 0) {
+            res = i;
+            count = 1;
+        }
+    }
+    
+    count = 0;
+    for (int i = 0; i < n; i++) {
+        if (nums[res] == nums[i])
+            count++;
+    }
+    
+    if (count <= n/2)
+        return -1;
+    
+    return res;
+}
+
+int main() {
+	int nums[] = {8,7,6,8,6,6,6,6};
+	int n = sizeof(nums) / sizeof(int);
+	cout << findMajority(nums, n) << endl;
+	return 0;
+}
+```
+
+## Repeating Elements
+
+```cpp
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Naive - O(nlogn) time O(1) space
+int NrepeatingElements(int arr[], int n) {
+    sort(arr, arr+n);
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] == arr[i+1])
+            return arr[i];
+    }
+}
+
+// Effcient - O(n) time and space
+int repeatingElements(int arr[], int n) {
+    bool visited[n] = {false};
+    for (int i = 0; i < n; i++) {
+        if (visited[arr[i]])
+            return arr[i];
+        visited[arr[i]] = true;
+    }
+    return -1;
+}
+
+int main() {
+	int arr[] = {0,2,1,3,2,2};
+	int n = sizeof(arr) / sizeof(int);
+	cout << repeatingElements(arr, n) << endl;
+}
+
+// Effcient - O(n) time and O(1) space
+int repeatingElements(int arr[], int n) {
+    
+   // assuming that 1 <= arr[i] <= n-1
+   // add 1 to all assignment operator for 0 present in array, return slow - 1
+   // will not work for 0 index as there will self loops
+   int slow = arr[0], fast = arr[0];
+   do {
+       slow = arr[slow];
+       fast = arr[arr[fast]];
+   } while (slow != fast);
+   
+   slow = arr[0];
+   while (slow != fast) {
+       slow = arr[slow];
+       fast = arr[fast];
+   }
+   return slow;
+}
+
+int main() {
+	int arr[] = {1,3,2,4,6,5,7,3};
+	int n = sizeof(arr) / sizeof(int);
+	cout << repeatingElements(arr, n) << endl;
+}
+
+```
+### 21/6/21
+
+## Allocate the minimum pages
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+// Naive
+int sum(int arr[], int a, int b);
+
+int minPages(int arr[], int n, int k) {
+    if (k == 1)
+        return sum(arr, 0, n - 1);
+    if (n == 1)
+        return arr[0];
+    int res = INT_MAX;
+    for (int i = 1; i < n; i++) {
+        res = min(res, max(minPages(arr, i, k-1),
+                                sum(arr, i, n-1)));
+    }
+    return res;
+}
+
+int sum(int arr[], int a, int b) {
+    int sum = 0;
+    for (int i = a; i <= b; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+// Efficient
+bool feasible(int arr[], int n, int k, int ans) {
+    int req = 1, sum = 0;
+    for (int i = 0; i < sum; i++) {
+        if (arr[i] + sum > ans) {
+            req++;
+            sum = arr[i];
+        }
+        else {
+            sum += arr[i];
+        }
+    }
+    return (req <= k);
+}
+
+
+int minPages(int arr[], int n, int k) {
+    int sum = arr[0];
+    int maxi = arr[0];
+    for (int i = 1; i < n; i++) {
+        sum += arr[i];
+        maxi = max(maxi, arr[i]);
+    }
+    int low = maxi, high = sum, res = 0;
+    while(low <= high) {
+        int mid = (low + high) / 2;
+        if (feasible(arr, n, k, mid)) {
+            res = mid;
+            high = mid - 1;
+        } 
+        else {
+            low = mid + 1;
+        }
+    }
+    return res;
+}
+
+int main() {
+	int arr[] = {10,20,30,40};
+	int n = sizeof(arr) / sizeof(int);
+	int k = 2;
+	cout << minPages(arr, n, k) << endl;
+}
+```
