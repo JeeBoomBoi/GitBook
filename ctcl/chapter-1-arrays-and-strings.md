@@ -1,12 +1,10 @@
 # Chapter 1 Arrays and Strings
 
-Date: 1/2/2021
-
 1\) Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures ?
 
 {% tabs %}
 {% tab title="Python" %}
-```text
+```py
 def IsUnique(string):
     # to make sure a character is unique (ASCII)
     if len(string) > 128:
@@ -25,7 +23,7 @@ def IsUnique(string):
 {% endtab %}
 
 {% tab title="CPP" %}
-```text
+```cpp
 bool isUnique(const string &str) 
 {
     if (str.length() > 128) 
@@ -54,7 +52,7 @@ Date: 2/2/2021
 
 {% tabs %}
 {% tab title="Python" %}
-```text
+```py
 def checkPermutationUsingSort(str1, str2):
     if len(str1) != len(str2):
         return False
@@ -82,7 +80,7 @@ def checkPermutation(str1, str2):
 {% endtab %}
 
 {% tab title="CPP" %}
-```text
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -135,7 +133,7 @@ bool checkPermutation(string str1, string str2)
 
 {% tabs %}
 {% tab title="Python" %}
-```text
+```py
 def URLifyPythonic(string, length):
     return string.rstrinp().replace(" ", "%20")
 
@@ -163,3 +161,58 @@ print(URLify("Mr John Smith    ", 13))
 {% endtab %}
 {% endtabs %}
 
+
+4) Given a String, write a function to check if it is a permutation of a palindrome
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int getCharNumber(const char &c) {
+    int val = (int) c;
+
+    if ('a' <= val && val <= 'z') {
+        return val - 'a';
+    } else if ('A' <= val && val <= 'Z') {
+        return val - 'A';
+    }
+    return -1;
+}
+
+vector<int> buildcharFrequencyTable(string phrase) {
+    vector<int> frequencyTable (getCharNumber('z') - getCharNumber('a') + 1, 0);
+    int n = phrase.length();
+    for (int i = 0; i < n; i++) {
+        int x = getCharNumber(phrase[i]);
+        if (x != -1) {
+            frequencyTable[x]++;
+        }
+    }
+    return frequencyTable;
+}
+
+bool checkMaxOneOdd(vector<int> &table) {
+    bool foundOdd = false;
+    for (auto x : table) {
+        if (x % 2 == 1) {
+            if (foundOdd) {
+                return false;
+            }
+            foundOdd = true;
+        }
+    }
+    return true;
+}
+
+bool isPermutationPalindrome(const string &s) {
+    vector<int> table = buildcharFrequencyTable(s);
+    return checkMaxOneOdd(table);
+}
+
+int main() {
+    string s = "Taco cat";
+    string isPermuatation = isPermutationPalindrome(s) ? "yes" : "no";
+    cout << isPermuatation << endl;
+    return 0;
+}
+```

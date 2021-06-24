@@ -30,3 +30,4 @@
 * [Arrays](code-library/arrays.md)
 * [Linked List](code-library/linkedlist.md)
 * [Searching](code-library/searching.md)
+* [Sorting](code-library/sorting.md)
