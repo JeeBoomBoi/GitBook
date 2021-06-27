@@ -32,3 +32,4 @@
 * [Searching](code-library/searching.md)
 * [Sorting](code-library/sorting.md)
 * [Strings](code-library/strings.md)
+* [Stack](code-library/stack.md)
