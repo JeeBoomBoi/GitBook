@@ -7,15 +7,12 @@ link - [https://leetcode.com/problems/contains-duplicate/](https://leetcode.com/
 {% tab title="Python" %}
 ```text
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dictionary = {}
-
-        for i, value in enumerate(nums):
-            rem = target - value
-
-            if rem in dictionary:
-                return [dictionary[rem], i]
-            else:
-                dictionary[value] = i
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        my_set = set()
+        for i in nums:
+            if i in my_set:
+                return True
+            my_set.add(i)
+        return False
 ```
 {% endtab %}
