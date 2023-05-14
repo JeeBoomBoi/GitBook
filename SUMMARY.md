@@ -2,6 +2,10 @@
 
 * [The genesis](README.md)
 
+## Neetcode
+
+* [Arrays and Hashing](neetcode/arrays-and-hashing.md)
+
 ## Team Blind 75
 
 * [Day1](team-blind-75/day-1.md)
