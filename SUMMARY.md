@@ -1,6 +1,9 @@
 # Table of contents
 
-* [The genesis](README.md)
+* [Home page](README.md)
+
+## Grokking algorithms
+* [Introduction to Algorithms](grokking-algorithm/introduction_to_algo.md)
 
 ## Neetcode
 
