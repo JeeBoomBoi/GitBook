@@ -2,8 +2,10 @@
 
 * [Home page](README.md)
 
+
 ## Grokking algorithms
 * [Introduction to Algorithms](grokking-algorithm/introduction_to_algo.md)
+* [Selection sort](grokking-algorithm/selection_sort.md)
 
 ## Neetcode
 
