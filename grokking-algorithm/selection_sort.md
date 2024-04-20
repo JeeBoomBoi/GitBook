@@ -61,3 +61,11 @@ public class SelectionSort {
 
 ```
 {% endtab %}
+
+## Chapter Recap
+* Your computer’s memory is like a giant set of drawers.
+* When you want to store multiple elements, use an array or a linked list.
+* With an array, all your elements are stored right next to each other.
+* With a linked list, elements are strewn all over, and one element stores the address of the next one.
+* Arrays allow fast reads.
+* Linked lists allow fast inserts and deletes.
