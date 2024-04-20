@@ -1,11 +1,11 @@
 # Table of contents
 
-* [Home page](README.md)
-
+* [😀 Home page](README.md)
 
 ## Grokking algorithms
-* [Introduction to Algorithms](grokking-algorithm/introduction_to_algo.md)
-* [Selection sort](grokking-algorithm/selection_sort.md)
+
+* [Introduction to Algorithms](grokking-algorithm/introduction\_to\_algo.md)
+* [Selection sort](grokking-algorithm/selection\_sort.md)
 
 ## Neetcode
 
@@ -15,7 +15,7 @@
 
 * [Day1](team-blind-75/day-1.md)
 
-## CTCI <a id="ctcl"></a>
+## CTCI <a href="#ctcl" id="ctcl"></a>
 
 * [Chapter 1 Arrays and Strings](ctcl/chapter-1-arrays-and-strings.md)
 
