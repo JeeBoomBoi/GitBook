@@ -22,10 +22,7 @@
 
 ## Striver sheet
 
-* [Day 2](striver-sheet/day-2.md)
-* [Day 3](striver-sheet/day-3.md)
-* [Day 4](striver-sheet/day-4.md)
-* [Day 5](striver-sheet/day-5.md)
+* [Problems](striver-sheet/all-problems.md)
 
 ## GFG
 
