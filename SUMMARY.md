@@ -7,6 +7,7 @@
 * [Introduction to Algorithms](grokking-algorithm/introduction\_to\_algo.md)
 * [Selection sort](grokking-algorithm/selection\_sort.md)
 * [Recursion](grokking-algorithm/recursion.md)
+* [Quicksort](grokking-algorithm/quicksort.md)
 
 ## Neetcode
 
