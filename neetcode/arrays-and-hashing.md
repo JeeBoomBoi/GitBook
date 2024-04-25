@@ -4,8 +4,25 @@
 link - [https://leetcode.com/problems/contains-duplicate/](https://leetcode.com/problems/contains-duplicate/)
 
 {% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> hashSet = new HashSet();
+        for (int x: nums) {
+            if (hashSet.contains(x)) {
+                return true;
+            }
+            hashSet.add(x);
+        }
+        return false;
+    }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-```text
+```py
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         my_set = set()
@@ -16,6 +33,7 @@ class Solution:
         return False
 ```
 {% endtab %}
+{% endtabs %}
 
 ## 242. Valid Anagram
 link - [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
