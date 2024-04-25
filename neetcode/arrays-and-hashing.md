@@ -170,6 +170,7 @@ class Solution:
             my_dict[nums[i]] = i
 ```
 {% endtab %}
+{% endtabs %}
 
 ## 49. Group Anagrams
 link - [https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)
