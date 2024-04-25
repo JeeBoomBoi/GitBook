@@ -40,13 +40,8 @@ class Solution:
 
 link - [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
 
-<<<<<<< Updated upstream
-\{% tab title="Java Initial Approach" %\}
-
-=======
 {% tabs %}
 {% tab title="Java Initial Approach" %}
->>>>>>> Stashed changes
 ```java
 class Solution {
     public boolean isAnagram(String s, String t) {
@@ -124,11 +119,8 @@ class Solution:
 
         return True
 ```
-<<<<<<< Updated upstream
-=======
 {% endtab %}
 {% endtabs %}
->>>>>>> Stashed changes
 
 ## 1. Two Sum
 
@@ -172,11 +164,8 @@ class Solution:
             # store the current number along with the index
             my_dict[nums[i]] = i
 ```
-<<<<<<< Updated upstream
-=======
 {% endtab %}
 {% endtabs %}
->>>>>>> Stashed changes
 
 ## 49. Group Anagrams
 
