@@ -39,8 +39,61 @@ class Solution:
 link - [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
 
 {% tabs %}
+{% tab title="Java Initial Approach"}
+```java
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        HashMap<Character, Integer> hashMap = new HashMap();
+        for (int i = 0; i < s.length(); i++) {
+            char a = s.charAt(i);
+            int x = hashMap.getOrDefault(s.charAt(i), 0);
+            hashMap.put(a, ++x);
+        }
+        for (int i = 0; i < t.length(); i++) {
+            char b = t.charAt(i);
+            if (!hashMap.containsKey(b)) {
+                return false;
+            } else {
+                hashMap.put(b, hashMap.get(b) - 1);
+                if (hashMap.get(b) < 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java Optimal Approach" %}
+```java
+class Solution {
+    // will only work if characters are a-z
+    public boolean isAnagram(String s, String t) {
+        int[] alphabet = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            alphabet[s.charAt(i) - 'a']++;
+        }
+        for (int i = 0; i < t.length(); i++) {
+            alphabet[t.charAt(i) - 'a']--;
+        }
+        for (int i : alphabet) {
+            if (i != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-```text
+```py
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # check the length of strings
@@ -73,6 +126,27 @@ class Solution:
 ## 1. Two Sum
 link - [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
 {% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] arr = new int[2];
+        HashMap<Integer, Integer> hashMap = new HashMap();
+        for (int i = 0; i < nums.length; i++) {
+            int x = target - nums[i];
+            if (hashMap.containsKey(nums[i])) {
+                arr[0] = hashMap.get(nums[i]);
+                arr[1] = i;
+                return arr;
+            }
+            hashMap.put(x, i);
+        }
+        return arr;
+    }
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
 ```text
 class Solution:
