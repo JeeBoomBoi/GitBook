@@ -1,6 +1,7 @@
-# Arrays & Hashing
+# Arrays and Hashing
 
 ## 217. Contains Duplicate
+
 link - [https://leetcode.com/problems/contains-duplicate/](https://leetcode.com/problems/contains-duplicate/)
 
 {% tabs %}
@@ -36,10 +37,11 @@ class Solution:
 {% endtabs %}
 
 ## 242. Valid Anagram
+
 link - [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
 
-{% tabs %}
-{% tab title="Java Initial Approach"}
+\{% tab title="Java Initial Approach" %\}
+
 ```java
 class Solution {
     public boolean isAnagram(String s, String t) {
@@ -67,9 +69,7 @@ class Solution {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="Java Optimal Approach" %}
 ```java
 class Solution {
     // will only work if characters are a-z
@@ -90,9 +90,7 @@ class Solution {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="Python" %}
 ```py
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -121,12 +119,11 @@ class Solution:
 
         return True
 ```
-{% endtab %}
 
 ## 1. Two Sum
+
 link - [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
-{% tabs %}
-{% tab title="Java" %}
+
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -145,10 +142,8 @@ class Solution {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="Python" %}
-```text
+```
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # declare a dictionary which will contain
@@ -167,13 +162,12 @@ class Solution:
             # store the current number along with the index
             my_dict[nums[i]] = i
 ```
-{% endtab %}
 
 ## 49. Group Anagrams
+
 link - [https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)
-{% tabs %}
-{% tab title="Python" %}
-```text
+
+```
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # define a default dictionary
@@ -194,13 +188,12 @@ class Solution:
         # return the values of dictionary 
         return my_dict.values()
 ```
-{% endtab %}
 
 ## 347. Top K Frequent Elements
+
 link - [https://leetcode.com/problems/top-k-frequent-elements/](https://leetcode.com/problems/top-k-frequent-elements/)
-{% tabs %}
-{% tab title="Python" %}
-```text
+
+```
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         # dictionary to store the counts 
@@ -227,4 +220,3 @@ class Solution:
                 if (len(res) == k):
                     return res
 ```
-{% endtab %}
