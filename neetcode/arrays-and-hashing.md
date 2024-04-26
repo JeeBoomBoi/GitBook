@@ -175,8 +175,53 @@ class Solution:
 ## 49. Group Anagrams
 link - [https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)
 {% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map <List<Integer>, List<String>> hashMap = new HashMap();
+        for (String s : strs) {
+            int[] arr = new int[26];
+            for (int i = 0; i < s.length(); i++) {
+                arr[s.charAt(i) - 'a']++;
+            }
+            ArrayList<Integer> list = new ArrayList();
+            for (int a : arr) {
+                list.add(a);
+            }
+            if (hashMap.containsKey(list)) {
+                hashMap.get(list).add(s);
+            } else {
+                ArrayList<String> stringList = new ArrayList();
+                stringList.add(s);
+                hashMap.put(list, stringList);
+            }
+        }
+        return new ArrayList<>(hashMap.values());
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java Optimal Approach" %}
+```java
+public List<List<String>> groupAnagrams(String[] strs) {
+    if (strs == null || strs.length == 0) return new ArrayList<>();
+    Map<String, List<String>> map = new HashMap<>();
+    for (String s : strs) {
+        char[] ca = new char[26];
+        for (char c : s.toCharArray()) ca[c - 'a']++;
+        String keyStr = String.valueOf(ca);
+        if (!map.containsKey(keyStr)) map.put(keyStr, new ArrayList<>());
+        map.get(keyStr).add(s);
+    }
+    return new ArrayList<>(map.values());
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-```text
+```py
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # define a default dictionary
@@ -198,6 +243,7 @@ class Solution:
         return my_dict.values()
 ```
 {% endtab %}
+{% endtabs %}
 
 ## 347. Top K Frequent Elements
 link - [https://leetcode.com/problems/top-k-frequent-elements/](https://leetcode.com/problems/top-k-frequent-elements/)
