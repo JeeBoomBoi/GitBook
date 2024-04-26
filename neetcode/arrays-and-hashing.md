@@ -247,9 +247,48 @@ class Solution:
 
 ## 347. Top K Frequent Elements
 link - [https://leetcode.com/problems/top-k-frequent-elements/](https://leetcode.com/problems/top-k-frequent-elements/)
+
+* The heap is one maximally efficient implementation of an abstract data type called a priority queue, and in fact, priority queues are often referred to as "heaps", regardless of how they may be implemented. In a heap, the highest (or lowest) priority element is always stored at the root. However, a heap is not a sorted structure; it can be regarded as being partially ordered. A heap is a useful data structure when it is necessary to repeatedly remove the object with the highest (or lowest) priority, or when insertions need to be interspersed with removals of the root node.
+
 {% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        if (k == nums.length) {
+            return nums;
+        }
+        
+        Map<Integer, Integer> hashMap = new HashMap();
+        for (int n : nums) {
+            hashMap.put(n, hashMap.getOrDefault(n, 0) + 1);
+        } 
+
+        Queue<Integer> heap = new PriorityQueue<>(
+            // Lambda expression 
+            // Comparator to store the least frequent first
+            (n1, n2) -> hashMap.get(n1) - hashMap.get(n2));
+
+        for (int n : hashMap.keySet()) {
+            heap.add(n);
+            if (heap.size() > k) {
+                System.out.println(heap);
+                heap.poll();
+            }    
+        }
+
+        int[] top = new int[k];
+        for (int i = k - 1; i >= 0; i--) {
+            top[i] = heap.poll();
+        }
+        return top;
+        
+    }
+}
+```
+{% endtab %}
 {% tab title="Python" %}
-```text
+```py
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         # dictionary to store the counts 
@@ -277,3 +316,4 @@ class Solution:
                     return res
 ```
 {% endtab %}
+{% endtabs %}
