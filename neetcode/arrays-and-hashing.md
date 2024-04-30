@@ -368,3 +368,35 @@ class Solution {
 ```
 {% endtab %}
 {% endtabs %}
+
+
+## 238. Product of Array Except Self
+link - [https://leetcode.com/problems/product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/)
+{% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] answer = new int[nums.length];
+        int mul = 1;
+
+        // prefix sum
+        for (int i = 0; i < nums.length; i++) {
+            answer[i] = mul;
+            mul = mul * nums[i];
+        }
+
+        mul = 1;
+
+        // postfix sum
+        for (int i = answer.length - 1; i >= 0; i--) {
+            answer[i] = answer[i] * mul;
+            mul = mul * nums[i];
+        }
+
+        return answer;
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
