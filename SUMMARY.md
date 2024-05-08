@@ -15,10 +15,6 @@
 
 * [Arrays and Hashing](neetcode/arrays-and-hashing.md)
 
-## Team Blind 75
-
-* [Day1](team-blind-75/day-1.md)
-
 ## CTCI <a href="#ctcl" id="ctcl"></a>
 
 * [Chapter 1 Arrays and Strings](ctcl/chapter-1-arrays-and-strings.md)
