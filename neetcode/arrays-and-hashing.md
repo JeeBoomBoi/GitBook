@@ -400,3 +400,148 @@ class Solution {
 ```
 {% endtab %}
 {% endtabs %}
+
+## 36. Valid Sudoku
+link - (https://leetcode.com/problems/valid-sudoku/)[https://leetcode.com/problems/valid-sudoku/]
+{% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public boolean checkRow(char[][] board) {
+        for (int i = 0; i < 9; i++) {
+            HashSet hashSetRow = new HashSet<Character>();
+            for (int j = 0; j < 9; j++) {
+                if (board[i][j] == '.') continue;
+
+                if (!hashSetRow.contains(board[i][j])) {
+                    hashSetRow.add(board[i][j]);
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean checkCol(char[][] board) {
+        for (int i = 0; i < 9; i++) {
+            HashSet hashSetCol = new HashSet<Character>();
+            for (int j = 0; j < 9; j++) {
+                if (board[j][i] == '.') continue;
+
+                if (!hashSetCol.contains(board[j][i])) {
+                    hashSetCol.add(board[j][i]);
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean checkBox(char[][] board) {
+        int[] pivot_list = {1, 4, 7};
+        int[] perm = {-1, 0, 1};
+        int length = 3;
+        for (int i : pivot_list) {
+            for (int j : pivot_list) {
+                HashSet hashSet = new HashSet<Character>();
+                for (int a : perm) {
+                    for (int b : perm) {
+                        char element = board[i + a][j + b];
+                        if (element == '.') continue;
+                        if (hashSet.contains(element)) {
+                            return false;
+                        } else {
+                            hashSet.add(element);
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    public boolean isValidSudoku(char[][] board) {
+        return checkRow(board) && checkCol(board) && checkBox(board);
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java (Neetcode solution)" %}
+```java
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        //neetcode solution, slightly modified
+
+        //a set of the characters that we have already come across (excluding '.' which denotes an empty space)
+        Set<Character> rowSet = null;
+        Set<Character> colSet = null;
+
+
+        for (int i = 0; i < 9; i++) {
+            //reinitialize the sets so we don't carry over found characters from the previous run
+            rowSet = new HashSet<>();
+            colSet = new HashSet<>();
+            for (int j = 0; j < 9; j++) {
+                char r = board[i][j];
+                char c = board[j][i];
+                if (r != '.'){
+                    if (rowSet.contains(r)){
+                        return false;
+                    } else {
+                        rowSet.add(r);
+                    }
+                }
+                if (c != '.'){
+                    if (colSet.contains(c)){
+                        return false;
+                    } else {
+                        colSet.add(c);
+                    }
+                }
+            }
+        }
+
+        //block
+        //loop controls advance by 3 each time to jump through the boxes
+        for (int i = 0; i < 9; i = i + 3) {
+            for (int j = 0; j < 9; j = j + 3) {
+                //checkBlock will return true if valid
+                if (!checkBlock(i, j, board)) {
+                    return false;
+                }
+            }
+        }
+        //passed all tests, therefore valid board
+        return true;
+    }
+
+    public boolean checkBlock(int idxI, int idxJ, char[][] board) {
+        Set<Character> blockSet = new HashSet<>();
+        //if idxI = 3 and indJ = 0
+        //rows = 6 and cols = 3
+        int rows = idxI + 3;
+        int cols = idxJ + 3;
+        //and because i initializes to idxI but only goes to rows, we loop 3 times (once for each row)
+        for (int i = idxI; i < rows; i++) {
+            //same for columns
+            for (int j = idxJ; j < cols; j++) {
+                if (board[i][j] == '.') {
+                    continue;
+                }
+                
+                if (blockSet.contains(board[i][j])) {
+                    return false;
+                }
+
+                blockSet.add(board[i][j]);
+            }
+        }
+
+        return true;
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
