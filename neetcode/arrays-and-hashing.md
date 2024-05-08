@@ -402,7 +402,7 @@ class Solution {
 {% endtabs %}
 
 ## 36. Valid Sudoku
-link - (https://leetcode.com/problems/valid-sudoku/)[https://leetcode.com/problems/valid-sudoku/]
+link - [https://leetcode.com/problems/valid-sudoku/](https://leetcode.com/problems/valid-sudoku/)
 {% tabs %}
 {% tab title="Java" %}
 ```java
