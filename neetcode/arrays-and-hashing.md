@@ -545,3 +545,50 @@ class Solution {
 ```
 {% endtab %}
 {% endtabs %}
+
+## 128. Longest Consecutive Sequence
+
+link - [https://leetcode.com/problems/longest-consecutive-sequence/description/](https://leetcode.com/problems/longest-consecutive-sequence/description/)
+
+Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+You must write an algorithm that runs in O(n) time.
+
+ 
+```
+Example 1:
+
+Input: nums = [100,4,200,1,3,2]
+Output: 4
+Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+```
+{% tabs %}
+{% tab title="Java" %}
+```java
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        if (nums.length == 0)
+            return 0;
+        HashSet<Integer> hashSet = new HashSet();
+        for (int n : nums) {
+            hashSet.add(n);
+        }
+        int largest = 1;
+        for (int n : nums) {
+            int count = 1;
+            if (!hashSet.contains(n - 1)) {
+                while (hashSet.contains(n + 1)) {
+                    n++;
+                    count++;
+                }
+                largest = Math.max(largest, count);
+            }
+            if (largest > nums.length)
+                return largest;
+        }
+        return largest;
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
