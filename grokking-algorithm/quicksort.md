@@ -2,59 +2,6 @@
 
 * Uses Divide and Conquer strategy, used Euclid's algorithm as an example with respect to dividing land into equal parts
 
-## Recursive Practice
-```java
-package snips;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
-public class RecursivePractice {
-    public static int sum(ArrayList<Integer> arr) {
-        if (arr.size() == 0) {
-            return 0;
-        } else {
-            int x = arr.remove(0);
-            return x + sum(arr);
-        }
-    } 
-
-    public static int count(ArrayList<Integer> arr) {
-        if (arr.size() == 0) {
-            return 0;
-        } else {
-            arr.remove(0);
-            return 1 + count(arr);
-        }
-    }
-
-    public static int max(ArrayList<Integer> arr) {
-        if (arr.size() == 0) {
-            return Integer.MIN_VALUE;
-        } else {
-            int x = arr.remove(0);
-            int y = max(arr);
-            return y > x ? y : x;
-        }
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter size of the array");
-        int size = sc.nextInt();
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            int e = sc.nextInt();
-            list.add(e);
-        }
-        // System.out.println("Sum of elements" + " " + sum(list));
-        // System.out.println("Count of elements" + " " + count(list));
-        System.out.println("Max of elements" + " " + max(list));
-
-        sc.close();
-    }
-}
-```
-
 ## Quicksort implementation
 ```java
 package snips;
