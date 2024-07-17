@@ -10,6 +10,7 @@
 * [Recursion](grokking-algorithm/recursion.md)
 * [Quicksort](grokking-algorithm/quicksort.md)
 * [Hash tables](grokking-algorithm/hash_tables.md)
+* [Linked List](grokking-algorithm/linked_list.md)
 
 ## Neetcode
 
