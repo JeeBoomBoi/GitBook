@@ -11,6 +11,7 @@
 * [Quicksort](grokking-algorithm/quicksort.md)
 * [Hash tables](grokking-algorithm/hash_tables.md)
 * [Linked List](grokking-algorithm/linked_list.md)
+* [Breadth First Search](grokking-algorithm/bfs.md)
 
 ## Neetcode
 
