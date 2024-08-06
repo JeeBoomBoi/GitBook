@@ -56,24 +56,20 @@ class Solution {
 {% tab title="Iterative" %}
 ```java
 class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
-        List<Integer> output = new LinkedList<>();
-        if (root == null) {
-            return output;
-        }
-        stack.add(root);
-        while(!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            output.add(node.val);
-            if (node.right != null) {
-                stack.add(node.right);
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
             }
-            if (node.left != null) {
-                stack.add(node.left);
-            }
+            curr = stack.pop();
+            res.add(curr.val);
+            curr = curr.right;
         }
-        return output;
+       return res;
     }
 }
 ```
